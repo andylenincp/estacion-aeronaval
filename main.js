@@ -19,7 +19,8 @@ port = process.env.PORT || puerto;
 var archivos=null;
 
 ////=======================descomentar la linea de abajo para conectar a la base de datos ======================//
-mongoose.connect('mongodb://pablo95:passtodb@ds235840.mlab.com:35840/ventasdb',{ server: { reconnectTries: Number.MAX_VALUE } }); 
+mongoose.connect('mongodb://anlecap:anlecap17@ds229474.mlab.com:29474/estacion-aeronaval',{ server: { reconnectTries: Number.MAX_VALUE } }); 
+//mongoose.connect('mongodb://pablo95:passtodb@ds235840.mlab.com:35840/ventasdb',{ server: { reconnectTries: Number.MAX_VALUE } }); 
 //mongoose.connect('mongodb://Admin:abc123.....@ds127963.mlab.com:27963/prueba',{ server: { reconnectTries: Number.MAX_VALUE } });
 //mongoose.connect('mongodb://127.0.0.1:27017/dbprueba',{ server: { reconnectTries: Number.MAX_VALUE } });
 //mongoose.connect('mongodb://Admin:abc123.....@ds127963.mlab.com:27963/prueba',{ server: { reconnectTries: Number.MAX_VALUE } });
