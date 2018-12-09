@@ -1,3 +1,2 @@
-# electron-template
-Plantilla nodejs para electron
-Esto es una prueba de pull
+# gestion-template
+Este es el que no contiene el error fatal

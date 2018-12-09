@@ -1,0 +1,79 @@
+<section class="full-width pageContent">
+	<div id="divTabla">
+		<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
+			<form action="#">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+					<label class="mdl-button mdl-js-button mdl-button--icon" for="searchPayment">
+						<i class="zmdi zmdi-search"></i>
+					</label>
+					<div class="mdl-textfield__expandable-holder">
+						<input class="mdl-textfield__input" type="text" id="searchPayment" validation="buscarTabla" event="keyup" TablaID="tblCliente"
+						 datos="0,1,2,3" placeholder=" Buscar">
+						<label class="mdl-textfield__label"></label>
+					</div>
+					<a href="/admin/cliente" title="Registrar nuevo Cliente" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="text-decoration:none; color: #3F51B5;position:absolute; right: 5%;" >Nuevo Registro</a>
+				</div>
+			</form>
+			<div style="overflow-x:auto; height:480px;">
+				<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive" id="tblCliente">
+					<thead>
+						    <tr>
+								<th>Ruc/Cédula</th>
+								<th>Nombre</th>
+								<th>Dirección</th>			
+								<th>Tipo Cliente</th>
+								<th><center>Opción</center></th>
+							</tr>
+						</thead>
+					<tbody id="contenidoTabla">
+						{{#if clientes}}{{#each clientes}}
+						<tr>
+							<td>{{this.Ced_Cli}}</td>
+							<td>{{this.Nomb_Cli}}</td>
+							<td id="{{this.Telf_Cli}}">{{this.Dir_Cli}}</td>
+							<td id="{{this.Cor_Cli}}">{{this.Tip_Cli}}</td>
+							<td>
+								<div>
+									<center>
+									<button title="Más Información" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" onclick="infoCliente(event,this)"><i style="color:#FF9800" class="zmdi zmdi-info"></i></button>&nbsp;&nbsp;&nbsp;
+									<button title="Modificar" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" onclick="editClient(event,this)"><i style="color:#3f51b5" class="zmdi zmdi-edit"></i>
+									</button>&nbsp;&nbsp;&nbsp;<button title="Borrar" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" onclick="deleteClient(event,this)" id="deleteClient" ><i style="color:#B71C1C" class="zmdi zmdi-delete"></i></button>
+									</center>
+								</div>
+							</td>
+						</tr>
+						{{/each}} {{else}}
+						<tr>
+							<td colspan="8">
+								<center>No hay datos para mostrar</center>
+							</td>
+						</tr>
+						{{/if}}
+					</tbody>
+				</table>
+			</div>
+				<br>
+		</div>
+	</div>
+</section>
+<script src="../modular/scripts/cliente.js"></script>
+<link rel="stylesheet" href="../modular/estilos/empleados.css">
+{{#if success_msg }}
+	<input id="inputsucces" type="hidden" value="{{success_msg}}">
+    <script type="text/javascript">
+	    input = document.getElementById("inputsucces").value || "Accion realizada con éxito"
+	    msgModal(input,'success',null);
+    </script>
+{{else if  error_msg }}
+	<input id="inputError" type="hidden" value="{{error_msg}}">
+    <script type="text/javascript">
+	    input = document.getElementById("inputError").value || "Error inesperado"
+	    msgModal(input,'error',"retroceder");
+    </script>
+{{/if}}
+<script type="text/javascript">
+	var titulo = document.getElementById("title_static");
+	if (titulo) {
+		titulo.innerHTML = '<i class="zmdi zmdi-account"></i><span class="hide-on-tablet">&nbsp; EMPLEADOS</span>'
+	};
+</script>

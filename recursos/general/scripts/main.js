@@ -10,7 +10,21 @@ $(document).ready(function(){
             NotificationArea.addClass('NotificationArea-show');
             ContainerNoty.addClass('container-notifications-show');
         }
-    });
+	});
+	$('.btn-recargar').on('click', function(){
+		document
+			.getElementById('contenidoTotal')
+				.innerHTML=`<section class="full-width pageContent">
+								<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+									<div class="mdl-tabs__panel is-active" id="tabNewAdmin">
+										<div class="mdl-grid">
+											<h1>Recargando....</h1>
+										</div>
+									</div>
+								</div>
+							</section>`;
+		location.reload();
+	})
     /*Mostrar ocultar menu principal*/
     $('.btn-menu').on('click', function(){
     	var navLateral=$('.navLateral');

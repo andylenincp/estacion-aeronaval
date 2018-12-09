@@ -19,10 +19,10 @@ port = process.env.PORT || puerto;
 var archivos=null;
 
 ////=======================descomentar la linea de abajo para conectar a la base de datos ======================//
+mongoose.connect('mongodb://pablo95:passtodb@ds235840.mlab.com:35840/ventasdb',{ server: { reconnectTries: Number.MAX_VALUE } }); 
 //mongoose.connect('mongodb://Admin:abc123.....@ds127963.mlab.com:27963/prueba',{ server: { reconnectTries: Number.MAX_VALUE } });
 //mongoose.connect('mongodb://127.0.0.1:27017/dbprueba',{ server: { reconnectTries: Number.MAX_VALUE } });
 //mongoose.connect('mongodb://Admin:abc123.....@ds127963.mlab.com:27963/prueba',{ server: { reconnectTries: Number.MAX_VALUE } });
-mongoose.connect('mongodb://pablo95:passtodb@ds235840.mlab.com:35840/ventasdb',{ server: { reconnectTries: Number.MAX_VALUE } }); 
 // //dany:1234@ds027618.mlab.com:27618/dboprueba'
 //Estas rutas dependen de la carpeta rutas___________________________________________________________________________________________________
 //Si se incrementa una nueva ruta deberá ser referenciada en esta parte
@@ -120,8 +120,19 @@ var menu = Menu.buildFromTemplate(
 //Asignamos el menú personalizado
 var aCerrar = true;
 function ventanaPrincipal() {
-  mainWindow = new BrowserWindow({ width: 1000, height: 860, icon: icono, minWidth: 1000, title: "Car de lujo" });
+  mainWindow = new BrowserWindow({
+    width: 1000, 
+    height: 860, 
+    icon: icono, 
+    minWidth: 1000, 
+    title: "Car de lujo",
+    webPreferences:{
+      experimentalFeatures:true,
+      experimentalCanvasFeatures:true
+    }
+  });
   mainWindow.maximize();
+  mainWindow.webContents.executeJavaScript();
   let cargando = new BrowserWindow({parent: mainWindow, modal: true, show: false, frame:false})
   cargando.once('show', () => {
     mainWindow.hide();

@@ -1,0 +1,114 @@
+<section class="full-width pageContent">
+		
+		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+			<div class="mdl-tabs__panel is-active" id="tabNewAdmin" style="display:block;">
+				<div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
+						<div class="full-width panel mdl-shadow--2dp">
+							<div class="full-width panel-tittle bg-primary text-center tittles">
+								Configuracion del Sistema
+							</div>
+							{{#if success_msg}}<div class="alert alert-success">{{success_msg}}</div>{{/if}} 
+							{{#if error_msg}}<div class="alert alert-danger">{{error_msg}}</div>{{/if}} 
+							<div class="full-width panel-content">
+								<form action="/admin/configuracion" method="post">
+									<div class="full-width text-center tittles" style="background-color:#448AFF;font-size:20px;color:#ffffff">
+										<label>Datos Empresariales</label>
+										<br>
+									</div>
+									<div class="mdl-grid">
+										<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
+			 								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<label class="text-condensedLight" style="font-size:20px;">Nombre del Local</label>
+												{{#if Name_Local}}
+												<input class="mdl-textfield__input" name="Name_Local" id="LocalName" maxlength="30" value="{{Name_Local}}" soloLetras="true" requerido>
+												{{else}}
+												<input class="mdl-textfield__input" name="Name_Local" id="LocalName" maxlength="30" soloLetras="true" requerido>
+												{{/if}}
+												<label class="mdl-textfield__label" for="LocalName"></label>
+												<span class="mdl-textfield__error">Sólo se permite caracteres de la A a la Z con tildes y espacios</span>
+								    		</div>
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<label class="text-condensedLight" style="font-size:20px;">Correo electrónico</label>
+												{{#if Email_Local}}
+												<input class="mdl-textfield__input" name="Email_Local" type="email" id="Correo" validation="email" event="keyup" value="{{Email_Local}}" requerido>
+												{{else}}
+												<input class="mdl-textfield__input" name="Email_Local" type="email" id="Correo" validation="email" event="keyup" requerido>
+												{{/if}}
+												<label class="mdl-textfield__label" for="Correo"></label>
+												<span class="mdl-textfield__error">Correo No válido</span>
+											</div>
+										</div>
+										<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<label class="text-condensedLight" style="font-size:20px;">Nombre del Propietario</label>
+												{{#if Name_Owner}}
+												<input class="mdl-textfield__input" name="Name_Owner" type="text" id="Name_Owner" soloLetras="true" maxlength="30" value="{{Name_Owner}}" requerido>
+												{{else}}
+												<input class="mdl-textfield__input" name="Name_Owner" type="text" id="Name_Owner" soloLetras="true" maxlength="60" requerido>
+												{{/if}}
+												<label class="mdl-textfield__label" for="Name_Owner"></label>
+												<span class="mdl-textfield__error">Sólo se permite caracteres de la A a la Z con tildes y espacios</span>
+											</div>
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<label class="text-condensedLight" style="font-size:20px;">Nombre del Gerente</label>
+												{{#if Name_Manager}}
+												<input class="mdl-textfield__input" name="Name_Manager" type="text" id="Name_Manager" soloLetras="true" maxlength="30" value="{{Name_Manager}}" requerido>
+												{{else}}
+												<input class="mdl-textfield__input" name="Name_Manager" type="text" id="Name_Manager" soloLetras="true" maxlength="60" requerido>
+												{{/if}}
+												<label class="mdl-textfield__label" for="Name_Manager"></label>
+												<span class="mdl-textfield__error">Sólo se permite caracteres de la A a la Z con tildes y espacios</span>
+											</div>
+										</div>
+									</div>
+									<div class="full-width text-center tittles" style="background-color:#448AFF;font-size:20px;color:#ffffff">
+										<label>Funciones del Sistema</label>
+										<br>
+									</div>
+									<div class="mdl-grid">
+										<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<label class="text-condensedLight" style="font-size:20px;">Impuesto de Valor Agregado (IVA)</label>
+												{{#if IVA}}
+												<input class="mdl-textfield__input" name="IVA" type="IVA" id="IVA" solonum="true" value="{{IVA}}" solodecimal="true" requerido>
+												{{else}}
+												<input class="mdl-textfield__input" name="IVA" type="IVA" id="IVA" solonum="true" solodecimal="true" requerido>
+												{{/if}}
+												<label class="mdl-textfield__label" for="IVA"></label>
+												<span class="mdl-textfield__error">Solo se acepta valores númericos</span>
+											</div>
+										</div>
+										<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop" style="display:none;">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<label class="text-condensedLight" style="font-size:20px;">Existencia Minima</label>
+												{{#if Exist_Min}}
+												<input class="mdl-textfield__input" name="Exist_Min" type="text" id="Exist_Min" solonum="true" value="{{Exist_Min}}" >
+												{{else}}
+												<input class="mdl-textfield__input" name="Exist_Min" type="text" id="Exist_Min" solonum="true" >
+												{{/if}}
+												<label class="mdl-textfield__label" for="Exist_Min"></label>
+												<span class="mdl-textfield__error">Solo se acepta valores númericos</span>
+											</div>
+										</div>
+									</div>
+										<div align="center">
+	                                       <button id="btn-addCliente" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5;" onclick="Enviar(event,this)" onsubmit="Enviar(event,this)">Editar Datos del sistema</button>
+	                                   	</div>
+                                   	<br><br>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<script src="../modular/scripts/configuracion.js"></script>
+<link rel="stylesheet" href="../modular/estilos/empleados.css">
+<script type="text/javascript">
+    var titulo = document.getElementById("title_static");
+    if (titulo) {
+        titulo.innerHTML = '<i class="zmdi zmdi-wrench"></i><span class="hide-on-tablet">&nbsp;&nbsp;CONFIGURACIONES</span>'
+    };
+</script>
