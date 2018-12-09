@@ -30,10 +30,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/juanmanuelco/electron-template.git"
+    "url": "git+https://github.com/AndyCastilloPalma/estacion-aeronaval.git"
   },
   "bugs": {
-    "url": "https://github.com/juanmanuelco/electron-template/issues"
+    "url": "https://github.com/AndyCastilloPalma/estacion-aeronaval/issues"
   },
-  "homepage": "https://github.com/juanmanuelco/electron-template#readme"
+  "homepage": "https://github.com/AndyCastilloPalma/estacion-aeronaval#readme"
 }
