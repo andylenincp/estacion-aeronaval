@@ -1,3 +1,4 @@
+
 <section class="full-width pageContent">
 		
 		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
@@ -6,7 +7,7 @@
 					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
 						<div class="full-width panel mdl-shadow--2dp">
 							<div class="full-width panel-tittle bg-primary text-center tittles">
-								Nuevo Cliente
+								Nuevo Técnico
 							</div>
 							{{#if success_msg}}<div class="alert alert-success">{{success_msg}}</div>{{/if}} 
 							{{#if error_msg}}<div class="alert alert-danger">{{error_msg}}</div>{{/if}} 
@@ -27,10 +28,13 @@
 												<span class="mdl-textfield__error">Ingrese sólo letras </span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<label class="text-condensedLight" style="font-size:20px;">Dirección</label>
-												<input class="mdl-textfield__input" name="Dir_Cli" type="text" id="addressClient1" maxlength="40"  requerido>
-												<label class="mdl-textfield__label" for="addressClient1"></label>
-												<span class="mdl-textfield__error">Dirección no válida</span>
+											<label class="text-condensedLight" style="font-size:20px;">Sección</label>
+												<select class="mdl-textfield__input" name="Tip_Cli">
+													<option value="Ocasional">Super king </option>
+													<option value="Premium">Cessna</option>
+													<option value="Premium">Casa</option>
+													<option value="Premium">Pillán</option>
+												</select>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<label class="text-condensedLight" style="font-size:20px;">Celular/Convencional</label>
@@ -47,16 +51,17 @@
 												<span class="mdl-textfield__error">Correo No válido</span>
 											</div>
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<label class="text-condensedLight" style="font-size:20px;">Tipo Cliente</label>
+												<label class="text-condensedLight" style="font-size:20px;">Tipo Técnico</label>
 												<select class="mdl-textfield__input" name="Tip_Cli">
-													<option value="Ocasional">Ocasional</option>
-													<option value="Premium">Premium</option>
+													<option value="Mecánico de Aviación">Mecánico de Aviación</option>
+													<option value="Electrónico de Aviación">Electrónico de Aviación</option>
+													<option value="Electricista de Aviación">Electricista de Aviación</option>
 												</select>
 											</div>
 											
 											<div align="center">
 		                                       <button id="btn-addCliente" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5; float:left;" onclick="saveCliente(event,this)" onsubmit="saveCliente(event,this)" >Guardar</button>
-		                                       <a href="/admin/tabla_cliente" id="btn-upClient" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="text-decoration:none; color: #3F51B5; float:left;" title="Mostrar Cliente Registrados">Ver Clientes Registrados</a>
+		                                       <a href="/admin/tabla_cliente" id="btn-upClient" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="text-decoration:none; color: #3F51B5; float:left;" title="Mostrar Cliente Registrados">Ver Técnicos Registrados</a>
 		                                   	</div>
 										</div>
 									</div>

@@ -36,7 +36,7 @@ function validarUsuario (input) {
     function(data,status){
     	if (status == "success") {
     		if (data.length >= 1) {
-				span[0].innerHTML = "El empleado con esta cédula ya está registrado en la base de datos";
+				span[0].innerHTML = "El Avion con esta placa ya está registrado en la base de datos";
     			divPadre.classList.add("is-invalid")
     			input.addEventListener("focus", function(){
 					var span = this.parentNode.getElementsByTagName("span");

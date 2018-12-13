@@ -126,7 +126,7 @@ function ventanaPrincipal() {
     height: 860, 
     icon: icono, 
     minWidth: 1000, 
-    title: "Car de lujo",
+    title: "Estación Aeronaval Manta",
     webPreferences:{
       experimentalFeatures:true,
       experimentalCanvasFeatures:true
