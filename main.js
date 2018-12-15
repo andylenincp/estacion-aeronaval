@@ -1,4 +1,4 @@
-//Establecemos la crecaión del servidor de elementos__________________________________________________________________________________________
+//Establecemos la creación del servidor de elementos__________________________________________________________________________________________
 const cookieParser = require('cookie-parser'),
   bodyParser = require('body-parser'),
   exphbs = require('express-handlebars'),
